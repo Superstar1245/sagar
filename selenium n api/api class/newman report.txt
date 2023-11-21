@@ -1,0 +1,17 @@
+  ------newman report in cmd----------------
+
+
+first we have to export collections from postman
+
+website--https://learning.postman.com/docs/collections/using-newman-cli/installing-running-newman/
+
+1. npm install -g newman
+2.newman run  "mycollection.json"
+      my collection-- just add the path of collection file by dragging into cmd
+
+2) to generate report in html
+
+website--https://github.com/postmanlabs/newman-reporter-html
+
+3. npm install -g newman-reporter-html
+4. newman run "collection path specify here" -r html

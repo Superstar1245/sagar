@@ -1,0 +1,25 @@
+url= https://gorest.co.in/
+
+endpoint = /public/v2/users
+
+https://gorest.co.in/public/v2/users
+
+requests
+----------------------------------------------
+POST           /public/v2/users
+GET	       /public/v2/users/1
+PUT/PATCH      /public/v2/users/1
+DELETE         /public/v2/users/1
+
+REQUEST bODY
+---------------
+{
+"name":"Tenali Ramakrishna",
+"gender":"male", 
+"email":"tenali.ramakrishna@15ce.com", 
+"status":"active"
+}
+
+
+
+token:3b3cc8080e19c4a1bea5e998e8e217d8ac1e6a1c13616834e203fc0f5853ed28

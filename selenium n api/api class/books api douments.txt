@@ -1,0 +1,20 @@
+Book Api
+-------------------------
+
+
+url = https://simple-books-api.glitch.me
+
+
+use post Request
+endpoints[token] = /api-clients/
+
+
+--------------------------------------------------------------------------------
+books Api
+
+url = https://simple-books-api.glitch.me
+
+
+1) post request
+
+end point

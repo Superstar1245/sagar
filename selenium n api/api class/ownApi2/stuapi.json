@@ -1,0 +1,39 @@
+ 
+{
+ "student":  [
+    {
+      "id": 1,
+      "name": "sagar",
+      "location": "india",
+      "courses": [
+        "selenium",
+        "appium"
+       ]
+     }, 
+    
+     
+    {
+     "id":2,
+     "name":"satish"
+     "location":"bangalore"
+     "courses":[
+     "cybersecurity",
+     "api",
+     "sql"
+     ]
+     },
+
+    {
+   "id":3,
+   "name":"bahu"
+   "location":"hubli"
+   "courses": [
+      "api",
+      "sql"
+    ]
+
+    }
+ 
+  ]
+
+}

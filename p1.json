@@ -1,0 +1,32 @@
+{
+
+   "post":[
+     {
+       "id": 1,
+      "title": "json_server",
+      "author": "typicode",
+       "job": "software Tester",
+       "name": "sagar hosamani"
+     }
+   ],
+ 
+  "comments": [
+     {
+       "id": 1,
+       "body": "some comments",
+       "postId": 1,
+       "company": "mobinious"
+     }
+   ],
+  
+  "profile": [
+    {
+      "name": "priyanka",
+      "husband": "upendra",
+      "job": "director"
+   }
+  ]
+
+}
+
+

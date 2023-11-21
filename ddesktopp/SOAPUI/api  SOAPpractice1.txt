@@ -1,0 +1,214 @@
+
+    [1]SOAP UI TOOL
+
+
+1) country WSDL
+first link
+web: http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso?WSDL
+
+1. create project
+
+ open sw------->click on SOAP majortab------>new project page--->inside that project name
+                                                                             initial wsdl -------> click on ok---->double click on project to create property
+
+2. testsuite
+right click on project---->select new testsuite--->ok----> double click on testsuite to create property
+
+
+3.testcase
+right click on testsuite---> select new testcase---->ok-->double click on testcase to create property
+
+4.teststep
+already its automatically its created so add property by----> right click on add steps---->properties--->specify the property name--> ok----->inside property popup just click on + to add property
+
+
+5. global level
+preferances majortab--->global property-->+ icon ---> add property --> ok
+
+-------------------------------------------------------------------------------------------------------------------
+
+6. groovy scripting
+right click on teststeps--->add steps---> groovyscipts---> specify name--->ok
+
+to fetch the properties in all levels we use groovy scripting.
+
+project level
+
+//project level
+def pro_lev=context.expand('${#Project#name}')
+log.info (pro_lev)
+
+suite level
+
+//suite level
+def suite_lev=context.expand('${#TestSuite#name}')
+log.info(suite_lev)
+
+case level
+
+//case level
+def case_lev=context.expand('${#TestCase#name}')
+log.info(case_lev)
+
+global level
+
+//global level
+def glob_lev=context.expand('${#Global#name}')
+log.info(glob_lev)
+
+teststep level
+
+//step level
+def step_lev=context.expand('${#name}')
+log.info(step_lev)
+
+--------------------------------------------------------------------------------------------------------------------
+
+to fetch all level properties by testRunner in groovy script (getProperty)
+
+
+//project level
+def p_lev=testRunner.testCase.testSuite.project.getPropertyValue('name')
+log.info(p_lev) 
+
+//suite level
+def sui_lev=testRunner.testCase.testSuite.getPropertyValue('name')
+log.info(sui_lev)
+
+//case level
+def case_lev=testRunner.testCase.getPropertyValue('name')
+log.info(case_lev)
+
+//step level
+def step_lev=testRunner.testCase.getTestStepByName('Property1').getPropertyValue('name')
+log.info(step_lev)
+
+//global level
+def g_lev=com.eviware.soapui.SoapUI.globalProperties.getPropertyValue('name')
+log.info(g_lev)
+
+-------------------------------------------------------------------------------------------------------------
+
+reinitialization of all level properties by testRunner (setProperty)
+
+
+//project level
+testRunner.testCase.testSuite.project.setPropertyValue('name','Barbuda')
+
+//suite level
+testRunner.testCase.testSuite.setPropertyValue('name','Austria')
+
+//case level
+testRunner.testCase.setPropertyValue('name','Armenia')
+
+//step level
+testRunner.testCase.getTestStepByName('Property1').setPropertyValue('name','Benin')
+
+//global level
+com.eviware.soapui.SoapUI.globalProperties.setPropertyValue('name','Brazil')
+
+
+----------------------------------------------------------------------------------------------------------------
+
+removing properties from all levels by test runner (removeProperty)
+
+
+//project level
+testRunner.testCase.testSuite.project.removeProperty('name')
+
+//suite level
+testRunner.testCase.testSuite.removeProperty('name')
+
+//case level
+testRunner.testCase.removeProperty('name')
+
+//step level
+testRunner.testCase.getTestStepByName('Property1').removeProperty('name')
+
+//global level
+com.eviware.soapui.SoapUI.globalProperties.removeProperty('name')
+
+-------------------------------------------------------------------------------------------------------------------------
+
+property transfer
+sending a response as a request to another is called as property transfer
+
+right click on teststeps----> addsteps--->soap request1---> specify name --->ok 
+right click on teststeps----> addsteps--->soap request2---> specify name --->ok
+
+
+
+____________________________________________________________________________________________________________________________________________________
+
+
+
+    [2]RESTASSURED TOOL
+
+
+rest assured apiclass sir given dependencies
+
+<!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
+<dependency>
+    <groupId>io.rest-assured</groupId>
+    <artifactId>rest-assured</artifactId>
+    <version>4.5.1</version>
+    <scope>test</scope>
+</dependency>
+<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+<dependency>
+    <groupId>com.fasterxml.jackson.core</groupId>
+    <artifactId>jackson-databind</artifactId>
+    <version>2.13.3</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
+<dependency>
+    <groupId>com.fasterxml.jackson.core</groupId>
+    <artifactId>jackson-core</artifactId>
+    <version>2.13.3</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations -->
+<dependency>
+    <groupId>com.fasterxml.jackson.core</groupId>
+    <artifactId>jackson-annotations</artifactId>
+    <version>2.13.3</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+<dependency>
+    <groupId>com.google.code.gson</groupId>
+    <artifactId>gson</artifactId>
+    <version>2.10.1</version>
+</dependency>
+
+------------------------------------------------------------------------------------------------------------------------
+
+RESTASSURED GET OPERATION SCRIPT
+
+package crudOperation;
+
+import io.restassured.RestAssured;
+import io.restassured.http.Method;
+import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
+
+public class Getoperation {
+
+	public static void main(String[] args) {
+	RestAssured.baseURI="https://reqres.in";
+	RequestSpecification req = RestAssured.given();
+	Response res = req.request(Method.GET,"/api/users?page=2");
+	System.out.println(res.asString());
+	System.out.println(res.getStatusCode());
+	System.out.println(res.getStatusLine());
+	System.out.println(res.getContentType());
+	System.out.println(res.getTime());
+
+	}
+
+}
+
+-----------------------------------------------------------------------
+
+RESTASSURED POST OPERATION SCRIPT
+
+
+

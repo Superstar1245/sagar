@@ -1,0 +1,251 @@
+                    Rest assured
+create maven project
+goto--->help----> eclipse market place--->search for testNG-->install it
+
+
+
+Dependencies
+---------------
+1.rest assured
+2.jsonpath
+3.json
+4.gson
+5.testng
+6.scribejava-apis
+7.json-schema-validator
+8.xml-schema-validator
+ 
+sourefile of pom.xml
+
+<dependencies>
+		  
+		  <!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
+<dependency>
+    <groupId>io.rest-assured</groupId>
+    <artifactId>rest-assured</artifactId>
+    <version>4.5.1</version>
+    <scope>test</scope>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/io.rest-assured/json-path -->
+<dependency>
+    <groupId>io.rest-assured</groupId>
+    <artifactId>json-path</artifactId>
+    <version>5.3.0</version>
+    <scope>test</scope>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/io.rest-assured/json-schema-validator -->
+<dependency>
+    <groupId>io.rest-assured</groupId>
+    <artifactId>json-schema-validator</artifactId>
+    <version>4.3.3</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/io.rest-assured/xml-path -->
+<dependency>
+    <groupId>io.rest-assured</groupId>
+    <artifactId>xml-path</artifactId>
+    <version>5.3.0</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+<dependency>
+    <groupId>com.google.code.gson</groupId>
+    <artifactId>gson</artifactId>
+    <version>2.10.1</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/org.testng/testng -->
+<dependency>
+    <groupId>org.testng</groupId>
+    <artifactId>testng</artifactId>
+    <version>7.8.0</version>
+    <scope>test</scope>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/com.github.scribejava/scribejava-apis -->
+<dependency>
+    <groupId>com.github.scribejava</groupId>
+    <artifactId>scribejava-apis</artifactId>
+    <version>8.3.1</version>
+    <scope>runtime</scope>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/org.apache.cxf/cxf-xerces-xsd-validation -->
+<dependency>
+    <groupId>org.apache.cxf</groupId>
+    <artifactId>cxf-xerces-xsd-validation</artifactId>
+    <version>2.7.18</version>
+</dependency>
+
+
+		  
+</dependencies>
+-------------------------------------------------------------
+https request
+
+get ---rear user
+post---create user
+put----update user
+delete--delete the user
+
+gerkin keyword
+
+given()--prerequest script/prereuisites[content type,set cookies,add path,add parameter,set headers info etc...]
+when()---requests[get,put,post,delete]
+then()---validation[validate status code,extract response,extract headers cookies &response body....]
+and()----to add multiple requests
+
+static import
+io.restassured.RestAssured.*
+io.restassured.matcher.RestAssuredMatchers.*
+org.hamcrest.Matchers.*
+
+format
+@test
+void getuser
+{
+  given()---> for 1st any method  don't specify dot 
+
+  .when()
+
+ .then()
+}
+
+----------
+Get users
+https://reqres.in/api/users?page=2
+
+postusers
+https://reqres.in/api/users
+
+{
+    "name": "morpheus",
+    "job": "leader"
+}
+
+update user
+https://reqres.in
+
+{
+    "name": "morpheus",
+    "job": "zion resident"
+}
+
+delete user
+https://reqres.in/api/users/2
+--------------------------------------------------------------
+
+pom.xml sourcefile of testNG
+
+
+	 <!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
+	<dependency>
+	    <groupId>io.rest-assured</groupId>
+	    <artifactId>rest-assured</artifactId>
+	    <version>5.3.1</version>
+	    <scope>test</scope>
+	</dependency>
+
+     <!-- https://mvnrepository.com/artifact/io.rest-assured/json-path -->
+	<dependency>
+	    <groupId>io.rest-assured</groupId>
+	    <artifactId>json-path</artifactId>
+	    <version>5.3.1</version>
+	    <scope>test</scope>
+	</dependency>
+	
+	 <!-- https://mvnrepository.com/artifact/io.rest-assured/json-schema-validator -->
+	<dependency>
+	    <groupId>io.rest-assured</groupId>
+	    <artifactId>json-schema-validator</artifactId>
+	    <version>5.3.1</version>
+	</dependency>
+
+	 <!-- https://mvnrepository.com/artifact/io.rest-assured/xml-path -->
+	<dependency>
+	    <groupId>io.rest-assured</groupId>
+	    <artifactId>xml-path</artifactId>
+	    <version>5.3.1</version>
+	</dependency>
+
+	<!-- https://mvnrepository.com/artifact/org.json/json -->
+	<dependency>
+	    <groupId>org.json</groupId>
+	    <artifactId>json</artifactId>
+	    <version>20230618</version>
+	</dependency>
+
+
+	<!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+	<dependency>
+	    <groupId>com.google.code.gson</groupId>
+	    <artifactId>gson</artifactId>
+	    <version>2.10.1</version>
+	</dependency>
+
+	<!-- https://mvnrepository.com/artifact/org.testng/testng -->
+	<dependency>
+	    <groupId>org.testng</groupId>
+	    <artifactId>testng</artifactId>
+	    <version>7.8.0</version>
+	    <scope>test</scope>
+	</dependency>
+
+	<!-- https://mvnrepository.com/artifact/com.github.scribejava/scribejava-apis -->
+	<dependency>
+	    <groupId>com.github.scribejava</groupId>
+	    <artifactId>scribejava-apis</artifactId>
+	    <version>8.3.3</version>
+	    <scope>runtime</scope>
+	</dependency>
+
+	<!-- https://mvnrepository.com/artifact/org.apache.cxf/cxf-xerces-xsd-validation -->
+	<dependency>
+	    <groupId>org.apache.cxf</groupId>
+	    <artifactId>cxf-xerces-xsd-validation</artifactId>
+	    <version>2.7.18</version>
+	</dependency>
+
+	  
+	  
+  </dependencies>
+  
+  
+ ---------------------------------------------------
+imports for http methods(by restAssured)
+
+restAssured-->docs-->getting started--->static imports
+
+import static import io.restassured.RestAssured.*
+import static  io.restassured.matcher.RestAssuredMatchers.*
+import static org.hamcrest.Matchers.*
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+   assertion
+
+status code
+pm.test("status",()=>
+{
+pm.resoponse.to.have.scode(200)
+
+
+
+
+
+
+
+
+
+
+
+ressponse time
+
+pm.test("response Time",()=>
+{
+
+pm.expect(pm.response.responseTime)to.be.below/above(900);
+
+
+});

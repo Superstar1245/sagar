@@ -1,0 +1,122 @@
+methods of webelements
+ methods             returntype
+1. clear()             void
+2.click()              void
+3.findelement()       webelement
+4.find elements()     list<webelement>
+5.get attribute()     string
+6.get cssvalue()      string
+7.getlocation()       string
+8.getrect()           rectangle
+9.getscreenshotAs()   x
+10.getsize()          dimension
+11.get tagname()      string
+12.gettext()          string
+13.isDisplayed()      bolean
+14.isEnabled()        bolean
+15.isSelected()       bolean
+16.sendkeys()         void
+17.submit()           void
+
+-------------------------------------------------------------------
+
+script for element visible
+
+package WEBELEMENT;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Elementvisibilty {
+
+	public static void main(String[] args) throws InterruptedException {
+		System.setProperty("webdriver.chrome.driver", "./softwares/chromedriver.exe");
+		ChromeDriver driver=new ChromeDriver();
+	
+
+		driver.get("file:///C:/Users/Administrator/Desktop/selenium%20mock2/visible.html");
+		Thread.sleep(6000);
+		WebElement ele = driver.findElement(By.xpath("//input[@type='checkbox']"));
+		boolean b = ele.isDisplayed();
+		if(b)
+		{
+		System.out.println("element is visible");	
+		}
+		else
+		{
+		System.out.println("element is not visible");
+		}
+		
+		driver.close();
+		}
+}	
+---------------------------------------------------------------------------		
+script for is enabled/disabled
+
+public class ISdisabled {
+
+	public static void main(String[] args) throws InterruptedException {
+    System.setProperty("webdriver.chrome.driver", "./softwares/chromedriver.exe");
+    ChromeDriver driver=new ChromeDriver();
+    driver.get("file:///C:/Users/Administrator/Desktop/disabled.html");
+   WebElement ele = driver.findElement(By.xpath("//input[@type='checkbox']"));
+   Thread.sleep(2000);
+   boolean e = ele.isEnabled();
+   if(e)
+   {
+	System.out.println("element is enabled");   
+	   
+   }   
+   else {
+	   
+	System.out.println("element is not enabled");  
+	driver.close();
+	   
+	   
+   }
+---------------------------------------------------------------------
+scripts for selected
+
+public class Isselected {
+
+	public static void main(String[] args) throws InterruptedException {
+    System.setProperty("webdriver.chrome.driver", "./softwares/chromedriver.exe");
+    ChromeDriver driver=new ChromeDriver();
+    driver.get("file:///C:/Users/Administrator/Desktop/selenium%20mock2/selected.html");
+    Thread.sleep(2000);
+	WebElement ele = driver.findElement(By.xpath("//input[@type='checkbox']"));	
+	boolean p = ele.isSelected();
+	if(p) {
+		
+		
+	System.out.println("is slected");	
+		
+	}
+		
+	else {
+		
+	System.out.println("is not selected");	
+	
+    Thread.sleep(2000);
+    driver.close();
+		
+	}	
+		
+-------------------------------------------------------------------------
+		
+		
+		
+		
+
+		
+		
+		
+		
+		
+		
+		
+		
+	
+
+

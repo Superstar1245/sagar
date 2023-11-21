@@ -1,0 +1,23 @@
+crud operation
+
+Website:https://reqres.in/
+endpoint:
+
+
+crud operation
+
+1.fetch single user
+2.fetch multiuser
+3.create user
+5.update user
+6.delete user
+--------------------------------------------------
+crud operation by own api
+in cmd json-server(name of json file) enter
+
+
+1.fetch single user
+2.fetch multiuser
+3.create user
+5.update user
+6.delete user

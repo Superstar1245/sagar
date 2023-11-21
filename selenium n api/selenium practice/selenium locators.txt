@@ -1,0 +1,696 @@
+METHODS OF WEBDRIVERS
+
+1)close()-void ---------------- to close the script
+2)get()-void-------------------to launch the url and no cookies
+3)navigate.to-navigation-------to launch browser,backward,forward and refresh actions also to store cookies
+4)get title()-string-----------to fetch the title of webpage
+5)get pagesource()-string------to fetch the source code
+6)get currenturl()-string------to fetch current webpage url
+7)Dimension(object),setsize()----------to resize the browser
+8)maximize()-------------------to maximize the browser
+9)point(object),setposition()--to change position of the browser
+
+
+
+_________________________________________________________________________________________________________________
+
+SCRIPT 1) to launch empty chrome browser
+
+package browserlaunch;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Chrome {
+
+	public static void main(String[] args) throws InterruptedException
+	{
+	System.setProperty("webdriver.chrome.driver", "./softwares/chromedriver.exe");
+	ChromeDriver driver=new ChromeDriver();
+	Thread.sleep(6000);
+	driver.manage().window().maximize();
+	Thread.sleep(6000);
+	driver.close();
+
+	}
+
+}
+------------------------------------------------------------------------------------------------------   
+
+Script 2) to launch empty firefox
+
+package browserlaunch;
+
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class Firefoxlaunch {
+
+	public static void main(String[] args) throws InterruptedException 
+	{
+System.setProperty("webdriver.gecko.driver", "./softwares/geckodriver.exe");
+FirefoxDriver driver=new FirefoxDriver();
+driver.manage().window().maximize();
+Thread.sleep(6000);
+driver.close();
+
+
+	}
+
+}
+-----------------------------------------------------------------------------------------
+
+script 3) to launch empty firefox and chrome browser both once 
+
+package browserlaunch;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class Bothchromefirelaunch {
+
+	public static void main(String[] args) throws InterruptedException 
+	{
+System.setProperty("webdriver.chrome.driver", "./softwares/chromedriver.exe");
+System.setProperty("webdriver.gecko.driver", "./softwares/geckodriver.exe");
+ChromeDriver driver=new ChromeDriver();
+Thread.sleep(6000);
+FirefoxDriver driver1=new FirefoxDriver();
+driver.manage().window().maximize();
+
+driver.close();
+
+
+	}
+
+}
+-------------------------------------------------------------------------------------
+ script 4) delete the cookies
+
+package deleteCookies;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Facbokcookies {
+
+	public static void main(String[] args) throws InterruptedException {
+	System.setProperty("webdriver.chrome.driver", "./softwares/chromedriver.exe");
+	ChromeDriver driver=new ChromeDriver();
+	driver.navigate().to("https://www.facebook.com/");
+	Thread.sleep(6000);
+	driver.manage().deleteAllCookies();
+	Thread.sleep(6000);
+	driver.close();
+
+	}
+
+}
+
+/////////////////////////////////////////////////////////////
+package deleteCookies;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Instagmcookies {
+
+	public static void main(String[] args) throws InterruptedException {
+		System.setProperty("webdriver.chrome.driver", "./softwares/chromedriver.exe");
+		ChromeDriver driver=new ChromeDriver();
+		driver.navigate().to("https://www.instagram.com/");
+		Thread.sleep(6000);
+		driver.manage().deleteAllCookies();
+		Thread.sleep(6000);
+		driver.close();
+
+
+	}
+
+}
+
+-----------------------------------------------------------------------------------
+script5) to launch url
+
+package launchURL;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Facbooklaunch {
+
+	public static void main(String[] args) throws InterruptedException {
+		System.setProperty("webdriver.chrome.driver", "./softwares/chromedriver.exe");
+		ChromeDriver driver=new ChromeDriver();
+		Thread.sleep(6000);
+		driver.get("https://www.facebook.com/");
+		Thread.sleep(6000);
+		driver.manage().window().maximize();
+		Thread.sleep(6000);
+		driver.close();
+		
+
+	}
+
+}
+/////////////////////////////////////////////////////////
+
+package launchURL;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Fecbokbynavigate {
+
+	public static void main(String[] args) throws InterruptedException {
+	System.setProperty("webdriver.chrome.driver", "./softwares/chromedriver.exe");
+	ChromeDriver driver=new ChromeDriver();
+	Thread.sleep(6000);
+driver.navigate().to("https://www.facebook.com/");
+Thread.sleep(6000);
+driver.manage().window().maximize();
+Thread.sleep(6000);
+driver.navigate().back();
+Thread.sleep(6000);
+driver.navigate().forward();
+Thread.sleep(6000);
+driver.navigate().refresh();
+Thread.sleep(6000);
+driver.close();
+	}
+
+}
+
+///////////////////////////////////////////////////////////////////////////
+
+package launchURL;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Instagambynavigate {
+
+	public static void main(String[] args) throws InterruptedException {
+		System.setProperty("webdriver.chrome.driver", "./softwares/chromedriver.exe");
+		ChromeDriver driver=new ChromeDriver();
+		Thread.sleep(6000);
+	driver.navigate().to("https://www.instagram.com/");
+	Thread.sleep(6000);
+	driver.manage().window().maximize();
+	Thread.sleep(6000);
+	driver.navigate().back();
+	Thread.sleep(6000);
+	driver.navigate().forward();
+	Thread.sleep(6000);
+	driver.navigate().refresh();
+	Thread.sleep(6000);
+	driver.close();
+
+	}
+
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+package launchURL;
+
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class Utubelaunch {
+
+	public static void main(String[] args) throws InterruptedException {
+		System.setProperty("webdriver.gecko.driver", "./softwares/geckodriver.exe");
+		FirefoxDriver driver=new FirefoxDriver();
+		Thread.sleep(5000);
+		driver.get("https://www.youtube.com/");
+		Thread.sleep(5000);
+driver.manage().window().maximize();
+driver.get("https://www.instagram.com/");
+Thread.sleep(5000);
+driver.close();
+	}
+
+}
+
+---------------------------------------------------------------------------------------------
+
+script 6) to fetch url title,source code and current url
+
+
+package URLTITLESOURCECODE;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Facebook {
+
+	public static void main(String[] args) throws InterruptedException {
+	System.setProperty("webdriver.chrome.driver", "./softwares/chromedriver.exe");
+	ChromeDriver driver=new ChromeDriver();
+	driver.get("https://www.facebook.com/");
+	Thread.sleep(6000);
+	String k=driver.getTitle();
+	System.out.println(k);
+     Thread.sleep(6000);
+	String l=driver.getPageSource();
+	System.out.println(l);
+	Thread.sleep(6000);
+	String m=driver.getCurrentUrl();
+	System.out.println(m);
+	driver.close();
+	
+
+	}
+
+}
+	
+------------------------------------------------------------------------------------------------------------------------------------
+
+Script 7) to maximize the browser
+
+package maximizebrowser;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Maximize {
+
+	public static void main(String[] args) throws InterruptedException {
+		System.setProperty("webdriver.chrome.driver", "./softwares/chromedriver.exe");
+		ChromeDriver driver=new ChromeDriver();
+		driver.get("https://www.facebook.com/");
+		Thread.sleep(6000);
+		String k=driver.getTitle();
+		System.out.println(k);
+	     Thread.sleep(6000);
+	     
+	    driver.manage().window().maximize();
+	    Thread.sleep(6000);
+		
+		driver.close();
+		
+
+
+	}
+
+}
+
+-------------------------------------------------------------------------------------------------
+Script 8) to resize the browser
+
+package resizebrowser;
+
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Chrome {
+
+	public static void main(String[] args) throws InterruptedException 
+{
+System.setProperty("webdriver.chrome.driver", "./softwares/chromedriver.exe");
+WebDriver driver=new ChromeDriver();
+
+Thread.sleep(6000);
+driver.manage().window().maximize();
+Thread.sleep(6000);
+Dimension d=new Dimension(600, 200);
+driver.manage().window().setSize(d);
+Thread.sleep(6000);
+driver.close();
+	}
+
+}
+
+/////////////////////////////////////////////////////////////////////////////////
+
+package resizebrowser;
+
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+
+public class Firefox {
+
+	public static void main(String[] args) throws InterruptedException {
+  System.setProperty("webdriver.gecko.driver", "./softwares/geckodriver.exe");
+  WebDriver driver=new FirefoxDriver();
+  Thread.sleep(6000);
+  driver.manage().window().maximize();
+  Thread.sleep(6000);
+  Dimension d=new Dimension(800, 200);
+  driver.manage().window().setSize(d);
+  Thread.sleep(6000);
+  driver.close();
+  
+ 
+
+	}
+
+}
+
+------------------------------------------------------------------------------------------------------
+
+Script 9) to change the position of browser
+
+
+package positionbrowser;
+
+import org.openqa.selenium.Point;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Chrome {
+
+	public static void main(String[] args) throws InterruptedException {
+	System.setProperty("webdriver.chrome.driver", "./softwares/chromedriver.exe");
+	WebDriver driver=new ChromeDriver();
+	Thread.sleep(6000);
+	Point p=new Point(350, 350);
+	driver.manage().window().setPosition(p);
+	Thread.sleep(6000);
+	driver.close();
+
+	}
+
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+package positionbrowser;
+
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.Point;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class Firefox {
+
+	public static void main(String[] args) throws InterruptedException {
+ System.setProperty("webdriver.gecko.driver", "./softwares/geckodriver.exe");
+ FirefoxDriver driver=new FirefoxDriver();
+ Thread.sleep(6000);
+ driver.manage().window().maximize();
+ Thread.sleep(6000);
+ Dimension d=new Dimension(500, 200);
+ driver.manage().window().setSize(d);
+ Thread.sleep(6000);
+ Point p=new Point(500, 100);
+ driver.manage().window().setPosition(p);
+ Thread.sleep(6000);
+ driver.close();
+ 
+	}
+}
+
+-----------------------------------------------------------------------------------------------------
+
+locators
+
+1)tagname
+
+
+* sourcecode for generating link by tagname
+
+<html>
+<body>
+<a href ="https://www.facebook.com/">facebook
+
+
+Script 10)to perform click action on link developed by tagname
+
+package CLICKACTION;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Tagnameclick {
+
+	public static void main(String[] args) throws InterruptedException {
+	System.setProperty("webdriver.chrome.driver", "./softwares/chromedriver.exe");
+	WebDriver driver=new ChromeDriver();
+	driver.manage().window().maximize();
+	driver.get("file:///C:/Users/Administrator/Desktop/facebooktagname.html");
+	Thread.sleep(6000);
+	driver.findElement(By.tagName("a")).click();
+	Thread.sleep(6000);
+	driver.close();
+	
+
+	}
+
+}
+
+//////////////////////////////////////////////////////////////////////////////////////
+
+
+package CLICKACTION;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Utubetagname {
+
+	public static void main(String[] args) throws InterruptedException {
+	System.setProperty("webdriver.chrome.driver", "./softwares/chromedriver.exe");
+	WebDriver driver=new ChromeDriver();
+	Thread.sleep(6000);
+	driver.manage().window().maximize();
+	Thread.sleep(6000);
+	driver.get("file:///C:/Users/Administrator/Desktop/utubetagname.html");
+	Thread.sleep(6000);
+	driver.findElement(By.tagName("a")).click();
+	Thread.sleep(6000);
+	
+	driver.close();
+
+}
+}
+
+///////////////////////////////////////////////////////////////////////////////
+
+package CLICKACTION;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Amazontagname {
+
+	public static void main(String[] args) throws InterruptedException {
+	System.setProperty("webdriver.chrome.driver", "./softwares/chromedriver.exe");
+	WebDriver driver=new ChromeDriver();
+	Thread.sleep(6000);
+	driver.manage().window().maximize();
+	Thread.sleep(6000);
+	driver.get("file:///C:/Users/Administrator/Desktop/selenium%20practice/amazontagname.html");
+	Thread.sleep(6000);
+	driver.findElement(By.tagName("a")).click();
+	Thread.sleep(6000);
+	driver.close();
+
+	}
+
+}
+
+------------------------------------------------------------------------------------------------------
+
+2) id
+
+sourcecode for developing link by id
+
+<html>
+<body>
+<a href="https://www.flipkart.com/" id="b1">flipkart</a>
+
+
+
+script  to  click on link developed by id
+
+package CLICKACTION;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class FlipkartID {
+
+	public static void main(String[] args) throws InterruptedException 
+	{
+	System.setProperty("webdriver.chrome.driver", "./softwares/chromedriver.exe");
+	WebDriver driver=new ChromeDriver();
+	Thread.sleep(5000);
+	driver.manage().window().maximize();
+	Thread.sleep(5000);
+	driver.get("file:///C:/Users/Administrator/Desktop/selenium%20practice/flipkartid.html");
+	Thread.sleep(5000);
+	driver.findElement(By.id("b1")).click();
+	Thread.sleep(5000);
+	driver.close();
+	
+	}
+}
+
+/////////////////////////////////////////////////////////////////////////////////////
+
+package CLICKACTION;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Facebokid {
+
+	public static void main(String[] args) throws InterruptedException {
+	System.setProperty("webdriver.chrome.driver","./softwares/chromedriver.exe");
+	WebDriver driver=new ChromeDriver();
+	Thread.sleep(5000);
+driver.manage().window().maximize();
+Thread.sleep(5000);
+driver.get("file:///C:/Users/Administrator/Desktop/selenium%20practice/facebookid.html");
+Thread.sleep(5000);
+driver.findElement(By.id("c1")).click();
+Thread.sleep(5000);
+driver.close();
+
+	}
+
+}
+
+//////////////////////////////////////////////////////////////////////////////////
+
+package CLICKACTION;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class UtubeID {
+
+	public static void main(String[] args) throws InterruptedException {
+	System.setProperty("webdriver.chrome.driver", "./softwares/chromedriver.exe");
+	WebDriver driver=new ChromeDriver();
+	Thread.sleep(5000);
+	driver.manage().window().maximize();
+	Thread.sleep(5000);
+	driver.get("file:///C:/Users/Administrator/Desktop/youtubeid.html");
+	Thread.sleep(5000);
+	driver.findElement(By.id("s5")).click();
+	Thread.sleep(5000);
+	driver.close();
+
+	}
+
+}
+
+-----------------------------------------------------------------------------------------------------
+
+3) name
+
+sourcecode to develop link by name
+
+<a href="https://facebook.com" id="a1" name="k2">facebook</a>
+
+
+script to click on link developed by name
+
+package CLICKACTION;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Facebokname {
+
+	public static void main(String[] args) throws InterruptedException {
+	System.setProperty("webdriver.chrome.driver", "./softwares/chromedriver.exe");
+	WebDriver driver=new ChromeDriver();
+	Thread.sleep(5000);
+	driver.manage().window().maximize();
+	Thread.sleep(5000);
+	driver.get("file:///C:/Users/Administrator/Desktop/facbokname.html");
+	Thread.sleep(5000);
+	driver.findElement(By.name("k2")).click();
+	Thread.sleep(5000);
+	driver.close();
+
+	}
+
+}
+///////////////////////////////////////////////////////////////////////////////////
+
+package CLICKACTION;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Flipkartname {
+
+	public static void main(String[] args) throws InterruptedException {
+	System.setProperty("webdriver.chrome.driver", "./softwares/chromedriver.exe");
+	WebDriver driver=new ChromeDriver();
+	Thread.sleep(5000);
+	driver.manage().window().maximize();
+	Thread.sleep(5000);
+	driver.get("file:///C:/Users/Administrator/Desktop/selenium%20practice/flipkartname.html");
+	Thread.sleep(5000);
+	driver.findElement(By.name("g2")).click();
+	Thread.sleep(5000);
+	driver.close();
+
+	}
+
+}
+////////////////////////////////////////////////////////////////////////////////
+package CLICKACTION;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Flipkartname {
+
+	public static void main(String[] args) throws InterruptedException {
+	System.setProperty("webdriver.chrome.driver", "./softwares/chromedriver.exe");
+	WebDriver driver=new ChromeDriver();
+	Thread.sleep(5000);
+	driver.manage().window().maximize();
+	Thread.sleep(5000);
+	driver.get("file:///C:/Users/Administrator/Desktop/selenium%20practice/flipkartname.html");
+	Thread.sleep(5000);
+	driver.findElement(By.name("p2")).click();
+	Thread.sleep(5000);
+	driver.close();
+
+	}
+
+}
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+facebook login
+
+by inspecting the facebook each login elements
+
+package logins;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Facebooklogin {
+
+	public static void main(String[] args) throws InterruptedException {
+ System.setProperty("webdriver.chrome.driver", "./softwares/chromedriver.exe");
+ WebDriver driver=new ChromeDriver();
+ driver.manage().window().maximize();
+ Thread.sleep(5000);
+ driver.get("https://www.facebook.com");
+ driver.findElement(By.id("email")).sendKeys("tester123@gmail.com");
+ Thread.sleep(5000);
+ driver.findElement(By.id("pass")).sendKeys("tester@123");
+ Thread.sleep(5000);
+ driver.findElement(By.name("login")).click();
+ Thread.sleep(5000);
+ driver.close();
+
+	}
+
+}
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------

@@ -1,0 +1,40 @@
+{
+  "employee": [
+    {
+      "id": 1,
+      "name": "sagar",
+      "location": "india",
+      "courses": [
+        "selenium",
+        "appium"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "shyam",
+      "location": "india",
+      "courses": [
+        "selenium",
+        "appium"
+      ]
+    },
+    {
+      "name": "bahu",
+      "location": "china",
+      "courses": [
+        "selenium",
+        "appium"
+      ],
+      "id": 3
+    },
+    {
+      "name": "bahu",
+      "location": "china",
+      "courses": [
+        "selenium",
+        "appium"
+      ],
+      "id": 4
+    }
+  ]
+}
